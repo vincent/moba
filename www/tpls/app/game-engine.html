@@ -1,0 +1,76 @@
+<!-- Games CSS -->
+<link rel="stylesheet" href="/three-arena/styles/animate.css">
+<link rel="stylesheet" href="/three-arena/styles/loadingbar.css">
+
+<style type="text/css">
+.dg.main  { position: absolute !important; top: 50px !important; right: 125px !important; left: auto !important; }
+.dg .selector { width: 125px !important; }
+#source { display: none; }
+#deadscreen { display: none; width: 100%; height: 100%; background: url(styles/youaredead.jpg) no-repeat 0 0; background-size: contain; }
+
+#hud-container #view-map {
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+#view-questmenu {
+  background: url(/gamedata/textures/quests/frame.png) no-repeat 0 0;
+  padding: 100px 44px 12px 24px;
+  width: 274px;
+  height: 424px;
+}
+#view-questmenu .text {
+  color: black;
+  height: 140px;
+}
+#view-questmenu ul.quests {
+  margin: 16px 0px;
+  padding: 0 20px;
+}
+#view-questmenu ul.quests li {
+  list-style-image: url(/gamedata/textures/quests/quest-16.png);
+  cursor: pointer;
+  color: black;
+}
+#view-questmenu ul.choices {
+  margin: 16px 0px;
+  padding: 0 20px;
+}
+#view-questmenu ul.choices li {
+  list-style-image: url(/gamedata/textures/quests/choice-16-disabled.png);
+  cursor: pointer;
+  color: black;
+}
+#loading-bar {
+  position: absolute;
+}
+
+.page-container #moba-app.mod-heroviewer {
+  overflow: hidden;
+  height: auto;
+  padding: 0;
+}
+
+.navbar.horizontal-menu.navbar-fixed-top+.page-container {
+  margin: -10px;
+}
+
+</style>
+
+
+
+
+<div id="page" class="container">
+
+</div> <!-- /container -->
+
+<div id="loading-bar"><div class="progress"></div></div>
+
+<!-- game elements -->
+<div id="game-wrapper" style="display:none;">
+
+  <div id="game-container">
+    <div id="selection-rectangle"></div>
+    <div id="deadscreen"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+/* DEBUG */
+#moba-app  {
+  height: 800px;
+}
+#moba-app > div {
+  border: 1px solid black;
+}
+
+/* BASE STYLE */
+#moba-header {
+  height: 30px;
+  text-align: right;
+}
+
+#moba-sidebar {
+  width: 24%;
+  float: left;
+  height: 100%;
+}
+
+#moba-content {
+  width: 74%;
+  float: right;
+  height: 100%;
+}
+
+#moba-footer {
+  width: 100%;
+  height: 100px;
+  clear: both;
+}

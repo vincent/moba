@@ -1,0 +1,44 @@
+{
+  "name": "moba.js",
+  "version": "2.0.0",
+  "type": "app",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "hoodie-plugin-appconfig": ">=2.0.1",
+    "hoodie-plugin-backbone": "^1.1.1",
+    "hoodie-plugin-email": ">=1.0.0",
+    "hoodie-plugin-game": "^0.3.0",
+    "hoodie-plugin-users": ">=2.1.0",
+    "hoodie-server": ">=2.0.0"
+  },
+  "files": [
+    "www/"
+  ],
+  "engines": {
+    "node": ">=0.10.22"
+  },
+  "scripts": {
+    "start": "node node_modules/hoodie-server/bin/start"
+  },
+  "hoodie": {
+    "plugins": [
+      "hoodie-plugin-appconfig",
+      "hoodie-plugin-email",
+      "hoodie-plugin-users",
+      "hoodie-plugin-game",
+      "hoodie-plugin-backbone"
+    ]
+  },
+  "gitHead": "71bfcc2717da10750003c26cb50d747a993951df",
+  "readme": "# Boilerplate for new Hoodie App\n\nYou can start to build your app in a fingersnap.\n\n\n## Installation\n\n`$ hoodie new appName -t \"zoepage/hoodie-boilerplate\" `\n\n\n## Including\n\n+ jQuery-1.9.1\n+ Bootstrap 3\n\nindex.html\n+ hoodie-accountbar (SignIn / SignOut)\n+ including all (css + js) files you need\n\nmain.css \n\nmain.js\n+ init hoodie",
+  "readmeFilename": "README.md",
+  "description": "You can start to build your app in a fingersnap.",
+  "_id": "hoodie-boilerplate@2.0.0",
+  "_shasum": "da111b82149567c49c8c8f97c3bb38a80296ef6c",
+  "_from": "git://github.com/zoepage/hoodie-boilerplate",
+  "_resolved": "git://github.com/zoepage/hoodie-boilerplate#71bfcc2717da10750003c26cb50d747a993951df",
+  "_fromGithub": true,
+  "devDependencies": {
+    "grunt-contrib-jst": "^0.6.0"
+  }
+}

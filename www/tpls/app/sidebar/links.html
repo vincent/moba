@@ -1,0 +1,64 @@
+<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+<%
+
+function renderLink(link) { %>
+  <li>
+    <a href="<%= link.url || '#' %>" <%
+      if (link.className) { %> class="<%= link.className %>"<% }
+      if (link.module)    { %> data-module="<%= link.module %>" data-action="<%= link.action %>"<% }
+      %>>
+      <i class="<%= link.icon || 'linecons-cog' %>"></i>
+      <span class="title"><%= link.title || link.url %></span>
+    </a>
+    <% if (link.subs) { %>
+      <ul>
+        <% _.each(link.subs, renderLink); %>
+      </ul>
+    <% } %>
+  </li>
+<% }
+
+_.each(obj.items, renderLink);
+%>
+<!--
+<li>
+  <a href="dashboard-1.html">
+    <i class="linecons-cog"></i>
+    <span class="title">Dashboard</span>
+  </a>
+  <ul>
+    <li>
+      <a href="dashboard-1.html">
+        <span class="title">Dashboard 1</span>
+      </a>
+    </li>
+    <li>
+      <a href="dashboard-2.html">
+        <span class="title">Dashboard 2</span>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<li class="opened">
+  <a href="layout-variants.html">
+    <i class="linecons-desktop"></i>
+    <span class="title">Heros & Spells</span>
+  </a>
+  <ul>
+    <li>
+      <a href="layout-variants.html">
+        <span class="title">Layout Variants &amp; API</span>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<li class="opened active">
+  <a href="sandbox.html">
+    <i class="linecons-desktop"></i>
+    <span class="title">Sandbox</span>
+  </a>
+</li>
+-->
