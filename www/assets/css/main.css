@@ -29,3 +29,8 @@
   height: 100px;
   clear: both;
 }
+
+
+.sidebar-user-info .user-links li a {
+  font-size: medium;
+}

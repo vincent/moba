@@ -2,25 +2,47 @@
 
 Moba.module('Profile', function(Profile, App, Backbone, Marionette, $, _) {
 
-  // Module Header View
-  // ------------------
-
-  Profile.header = App.Base.Header.extend({
-    onRender: function () {
-      this.$el.html('<span class="title">Profile</span>');
-    }
-  });
-
   // Module Content View
   // ------------------
 
   Profile.content = App.Base.Content.extend({
 
+    template: JST['app/profile/index'],
+
     initialize: function (options) {
-      this.model = new Backbone.Model(options.model || App.account());
+
+      _.bindAll(this, 'renderAsync');
+
+      this.model = options.model ? new App.UserModel(options.model) : App.account;
     },
 
-    template: JST['app/profile/index']
+    serializeModel: function (model) {
+
+      return this.model;
+    },
+
+    onRender: function () {
+
+      var self = this;
+
+      this.model.infos()
+        .done(this.renderAsync)
+        // TODO fail ...
+        ;
+    },
+
+    renderAsync: function (infos) {
+
+      this.$el.find('.player-card-full').html(
+        Marionette.Renderer.render(JST['app/profile/player-card-full'], infos)
+      );
+
+      this.$el.find('.player-match-history').html(
+        _.map(infos.matches, function (match) {
+          return Marionette.Renderer.render(JST['app/profile/player-match-item'], match);
+        }).join('\n')
+      );
+    }
 
   });
 

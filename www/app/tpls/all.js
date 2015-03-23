@@ -12,6 +12,16 @@ __p += '<!-- Games CSS -->\n<link rel="stylesheet" href="/three-arena/styles/ani
 return __p
 };
 
+this["JST"]["app/header/navbar"] = function(obj) {
+var __t, __p = '', __e = _.escape;
+__p += '\n<!-- Navbar Brand -->\n<div class="navbar-brand">\n  <a href="dashboard-1.html" class="logo">\n    <img src="assets/images/logo-white-bg@2x.png" width="80" alt="" class="hidden-xs" />\n    <img src="assets/images/logo@2x.png" width="80" alt="" class="visible-xs" />\n  </a>\n  <a href="#" data-toggle="settings-pane" data-animate="true">\n    <i class="linecons-cog"></i>\n  </a>\n</div>\n\n<!-- Mobile Toggles Links -->\n<div class="nav navbar-mobile">\n\n  <!-- This will toggle the mobile menu and will be visible only on mobile devices -->\n  <div class="mobile-menu-toggle">\n    <!-- This will open the popup with user profile settings, you can use for any purpose, just be creative -->\n    <a href="#" data-toggle="settings-pane" data-animate="true">\n      <i class="linecons-cog"></i>\n    </a>\n\n    <a href="#" data-toggle="user-info-menu-horizontal">\n      <i class="fa-bell-o"></i>\n      <span class="badge badge-success">7</span>\n    </a>\n\n    <!-- data-toggle="mobile-menu-horizontal" will show horizontal menu links only -->\n    <!-- data-toggle="mobile-menu" will show sidebar menu links only -->\n    <!-- data-toggle="mobile-menu-both" will show sidebar and horizontal menu links -->\n    <a href="#" data-toggle="mobile-menu-horizontal">\n      <i class="fa-bars"></i>\n    </a>\n  </div>\n\n</div>\n\n<div class="navbar-mobile-clear"></div>\n\n<!-- main menu -->\n<ul class="navbar-nav">\n\n</ul>\n\n<!-- notifications and other links -->\n<ul class="nav nav-userinfo navbar-right">\n\n  <!-- You can add "always-visible" to show make the search input visible -->\n  <li class="search-form">\n\n    <form method="get" action="extra-search.html">\n      <input type="text" name="s" class="form-control search-field" placeholder="Type to search..." />\n\n      <button type="submit" class="btn btn-link">\n        <i class="linecons-search"></i>\n      </button>\n    </form>\n\n  </li>\n\n  <li class="dropdown xs-left">\n    <a href="#" data-toggle="dropdown" class="notification-icon">\n      <i class="fa-envelope-o"></i>\n      <span class="badge badge-green">15</span>\n    </a>\n\n    <ul class="dropdown-menu messages">\n      <li>\n\n      <ul class="dropdown-menu-list list-unstyled ps-scrollbar">\n\n        <li class="active"><!-- "active" class means message is unread -->\n          <a href="#">\n            <span class="line">\n              <strong>Luc Chartier</strong>\n              <span class="light small">- yesterday</span>\n            </span>\n\n            <span class="line desc small">\n              This ain’t our first item, it is the best of the rest.\n            </span>\n          </a>\n        </li>\n\n        <li class="active">\n          <a href="#">\n            <span class="line">\n              <strong>Salma Nyberg</strong>\n              <span class="light small">- 2 days ago</span>\n            </span>\n\n            <span class="line desc small">\n              Oh he decisively impression attachment friendship so if everything.\n            </span>\n          </a>\n        </li>\n\n        <li>\n          <a href="#">\n            <span class="line">\n              Hayden Cartwright\n              <span class="light small">- a week ago</span>\n            </span>\n\n            <span class="line desc small">\n              Whose her enjoy chief new young. Felicity if ye required likewise so doubtful.\n            </span>\n          </a>\n        </li>\n\n      </ul>\n\n    </li>\n\n    <li class="external">\n      <a href="mailbox-main.html">\n        <span>All Messages</span>\n        <i class="fa-link-ext"></i>\n      </a>\n    </li>\n    </ul>\n\n  </li>\n\n  <li class="dropdown xs-left">\n    <a href="#" data-toggle="dropdown" class="notification-icon notification-icon-messages">\n      <i class="fa-bell-o"></i>\n      <span class="badge badge-purple">7</span>\n    </a>\n\n    <ul class="dropdown-menu notifications">\n              <li class="top">\n      <p class="small">\n        <a href="#" class="pull-right">Mark all Read</a>\n        You have <strong>3</strong> new notifications.\n      </p>\n    </li>\n\n    <li>\n      <ul class="dropdown-menu-list list-unstyled ps-scrollbar">\n\n        <li class="active notification-success">\n          <a href="#">\n            <i class="fa-user"></i>\n\n            <span class="line">\n              <strong>New user registered</strong>\n            </span>\n\n            <span class="line small time">\n              30 seconds ago\n            </span>\n          </a>\n        </li>\n\n      </ul>\n    </li>\n\n    <li class="external">\n      <a href="#">\n        <span>View all notifications</span>\n        <i class="fa-link-ext"></i>\n      </a>\n    </li>\n    </ul>\n  </li>\n\n  <li class="dropdown user-profile">\n    <a href="#" data-toggle="dropdown">\n      <img src="' +
+((__t = ( obj.app.account.image() )) == null ? '' : __t) +
+'" alt="user-image" class="img-circle img-inline userpic-32" width="28" />\n      <span>\n        ' +
+__e( obj.app.account.get('username') ) +
+'\n        <i class="fa-angle-down"></i>\n      </span>\n    </a>\n\n    <ul class="dropdown-menu user-profile-menu list-unstyled">\n      <li>\n        <a href="#edit-profile">\n          <i class="fa-edit"></i>\n          New Post\n        </a>\n      </li>\n      <li>\n        <a href="#settings">\n          <i class="fa-wrench"></i>\n          Settings\n        </a>\n      </li>\n      <li>\n        <a href="#profile" data-module="Profile" data-action="index">\n          <i class="fa-user"></i>\n          Profile\n        </a>\n      </li>\n      <li>\n        <a href="#help">\n          <i class="fa-info"></i>\n          Help\n        </a>\n      </li>\n      <li class="last">\n        <a href="extra-lockscreen.html">\n          <i class="fa-lock"></i>\n          Logout\n        </a>\n      </li>\n    </ul>\n  </li>\n\n  <li>\n    <a href="#" data-toggle="chat">\n      <i class="fa-comments-o"></i>\n    </a>\n  </li>\n\n</ul>\n';
+return __p
+};
+
 this["JST"]["app/hero-viewer/index"] = function(obj) {
 var __t, __p = '', __e = _.escape;
 __p += '<div id="hero-list">\n\n</div>\n\n<div id="spell-list">\n\n</div>\n\n<div id="viewer">\n\n</div>\n';
@@ -24,16 +34,52 @@ __p += '<div class="row">\n    <div class="col-md-6">\n\n        <!-- Default pa
 return __p
 };
 
+this["JST"]["app/matchs/lobby-item"] = function(obj) {
+var __t, __p = '', __e = _.escape;
+__p += '<div class="xe-comment-entry">\n    <a href="#" class="xe-user-img">\n        <img src="' +
+__e( obj.image() ) +
+'" class="img-circle" width="40">\n    </a>\n\n    <div class="xe-comment">\n        <a href="#" class="xe-user-name">\n            <strong>' +
+__e( obj.get('username') ) +
+'</strong>\n            <span class="label label-secondary">5</span>\n        </a>\n\n        <p>' +
+__e( obj.quote() ) +
+'</p>\n    </div>\n</div>\n\n';
+return __p
+};
+
+this["JST"]["app/matchs/lobby"] = function(obj) {
+var __t, __p = '', __e = _.escape;
+__p += '\n<style type="text/css">\n.xe-footer {\n  text-align: center;\n  padding-top: 2em;\n}\n</style>\n\n<div class="row">\n    <div class="col-sm-16">\n\n        <div class="xe-widget xe-conversations">\n\n            <div class="xe-bg-icon">\n                <i class="fa-users"></i>\n            </div>\n\n            <div class="xe-header">\n                <div class="xe-icon">\n                    <i class="fa-users"></i>\n                </div>\n                <div class="xe-label">\n                    <h3>\n                        Lobby\n                        <small>Chatting arround</small>\n                    </h3>\n                </div>\n            </div>\n\n            <div class="xe-body">\n                <ul class="list-unstyled players">\n\n                </ul>\n            </div>\n\n            <div class="xe-footer">\n                <i class="fa-circle-o-notch fa-spin"></i> Waiting for players\n            </div>\n\n        </div>\n\n    </div>\n</div>';
+return __p
+};
+
 this["JST"]["app/profile/index"] = function(obj) {
+var __t, __p = '', __e = _.escape;
+__p += '\n<style type="text/css">\n\n.profile-env .user-meta {\n  position: relative;\n}\n\n</style>\n\n<section class="profile-env">\n  <div class="row">\n\n    <div class="col-sm-3" class="user-meta">\n\n      <!-- User Info Sidebar -->\n      <div class="user-info-sidebar">\n        <a href="" class="user-img">\n          <img src="' +
+((__t = ( obj.image() )) == null ? '' : __t) +
+'" alt="user-img" class="img-cirlce img-responsive imgthumbnail" />\n        </a>\n\n        <div class="player-card-full"></div>\n\n        <button type="button" class="btn btn-success btn-block text-left">\n          Following <i class="fa-check pull-right"></i>\n        </button>\n\n      </div>\n\n    </div>\n\n    <div class="col-sm-9">\n\n      <!-- User timeline stories -->\n      <section class="user-timeline-stories"></section>\n\n    </div>\n\n  </div>\n</section>\n';
+return __p
+};
+
+this["JST"]["app/profile/player-card-full"] = function(obj) {
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
-__p += '\n<style type="text/css">\n\n.profile-env .user-meta {\n  position: relative;\n}\n\n</style>\n\n<section class="profile-env">\n  <div class="row">\n\n    <div class="col-sm-3" class="user-meta">\n\n      <!-- User Info Sidebar -->\n      <div class="user-info-sidebar">\n        <a href="" class="user-img">\n          <img src="assets/images/user-4.png" alt="user-img" class="img-cirlce img-responsive imgthumbnail" />\n        </a>\n\n        <a href="" class="user-name">\n          ';
- obj.username; ;
-__p += '\n          <span class="user-status is-online">\n            ';
- obj.app.playerCard(obj.ownerHash).done(function(){
-                debugger;
-            }); ;
-__p += '\n          </span>\n        </a>\n\n        <span class="user-title">\n          CEO at <strong>Google</strong>\n        </span>\n\n        <hr />\n\n        <ul class="list-unstyled user-info-list">\n          <li>\n            <i class="fa-home"></i> Prishtina, Kosovo\n          </li>\n          <li>\n            <i class="fa-briefcase"></i> <a href="">Laborator</a>\n          </li>\n          <li>\n            <i class="fa-graduation-cap"></i> University of Bologna\n          </li>\n        </ul>\n\n        <hr />\n\n        <ul class="list-unstyled user-friends-count">\n          <li>\n            <span>643</span> followers\n          </li>\n          <li>\n            <span>108</span> following\n          </li>\n        </ul>\n\n        <button type="button" class="btn btn-success btn-block text-left">\n          Following <i class="fa-check pull-right"></i>\n        </button>\n      </div>\n\n    </div>\n\n    <div class="col-sm-9">\n\n      <!-- User timeline stories -->\n      <section class="user-timeline-stories">\n\n        <!-- Timeline Story Type: Status -->\n        <article class="timeline-story">\n\n          <i class="fa-paper-plane-empty block-icon"></i>\n\n          <!-- User info -->\n          <header>\n            <a href="" class="user-img">\n              <img src="assets/images/user-4.png" alt="user-img" class="img-responsive img-circle" />\n            </a>\n\n            <div class="user-details">\n              <a href="">Art Ramadani</a> posted a status <a href="">update</a>.\n               <time>12 hours ago</time>\n            </div>\n          </header>\n\n          <div class="story-content">\n            <!-- Story Content Wrapped inside Paragraph -->\n            <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>\n\n            <!-- Story Options Links -->\n            <div class="story-options-links">\n              <a href="">\n                <i class="linecons-heart"></i> Like <span>(3)</span>\n              </a>\n\n              <a href="">\n                  <i class="linecons-comment"></i> Comments <span>(5)</span>\n              </a>\n            </div>\n\n            <!-- Story Comments -->\n            <ul class="list-unstyled story-comments">\n              <li>\n                <div class="story-comment">\n                  <a href="" class="comment-user-img">\n                    <img src="assets/images/user-2.png" alt="user-img" class="img-circle img-responsive" />\n                  </a>\n\n                  <div class="story-comment-content">\n                    <a href="" class="story-comment-user-name">\n                      Arlind Nushi\n                      <time>01 December 2014 - 17:54</time>\n                    </a>\n\n                    <p>Him these are visit front end for seven walls. Money eat scale now ask law learn.</p>\n                  </div>\n                </div>\n              </li>\n            </ul>\n\n            <form method="post" action="" class="story-comment-form">\n              <textarea class="form-control input-unstyled autogrow" placeholder="Reply..."></textarea>\n            </form>\n          </div>\n\n        </article>\n\n      </section>\n\n    </div>\n\n  </div>\n</section>\n';
+__p += '<style type="text/css">\n  .list-unstyled.user-friends-count li {\n    text-align: center;\n  }\n</style>\n\n<a href="" class="user-name">\n  ';
+ obj.playerId; ;
+__p += '\n  <span class="user-status is-online">\n  </span>\n</a>\n\n<ul class="list-unstyled user-friends-count">\n  <li>\n    level\n    <span>' +
+__e( (obj.level || 1) ) +
+'</span>\n  </li>\n  <li>\n    points\n    <span>' +
+__e( (obj.level || '0') ) +
+'</span>\n  </li>\n</ul>\n\n<hr />\n\n<ul class="list-unstyled user-achievements">\n  ';
+ _.each(obj.achievements, function(a){ ;
+__p += '\n  <li>\n    <span>643</span> followers\n  </li>\n  ';
+ }); ;
+__p += '\n</ul>\n';
+return __p
+};
+
+this["JST"]["app/profile/player-match-item"] = function(obj) {
+var __t, __p = '', __e = _.escape;
+__p += '<!-- Timeline Story Type: Status -->\n<article class="timeline-story">\n\n  <i class="fa-paper-plane-empty block-icon"></i>\n\n  <!-- User info -->\n  <header>\n    <a href="" class="user-img">\n      <img src="assets/images/user-4.png" alt="user-img" class="img-responsive img-circle" />\n    </a>\n\n    <div class="user-details">\n      <a href="">Art Ramadani</a> posted a status <a href="">update</a>.\n       <time>12 hours ago</time>\n    </div>\n  </header>\n\n  <div class="story-content">\n    <!-- Story Content Wrapped inside Paragraph -->\n    <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>\n\n    <!-- Story Options Links -->\n    <div class="story-options-links">\n      <a href="">\n        <i class="linecons-heart"></i> Like <span>(3)</span>\n      </a>\n\n      <a href="">\n          <i class="linecons-comment"></i> Comments <span>(5)</span>\n      </a>\n    </div>\n\n    <!-- Story Comments -->\n    <ul class="list-unstyled story-comments">\n      <li>\n        <div class="story-comment">\n          <a href="" class="comment-user-img">\n            <img src="assets/images/user-2.png" alt="user-img" class="img-circle img-responsive" />\n          </a>\n\n          <div class="story-comment-content">\n            <a href="" class="story-comment-user-name">\n              Arlind Nushi\n              <time>01 December 2014 - 17:54</time>\n            </a>\n\n            <p>Him these are visit front end for seven walls. Money eat scale now ask law learn.</p>\n          </div>\n        </div>\n      </li>\n    </ul>\n\n    <form method="post" action="" class="story-comment-form">\n      <textarea class="form-control input-unstyled autogrow" placeholder="Reply..."></textarea>\n    </form>\n  </div>\n\n</article>\n';
 return __p
 };
 
@@ -98,11 +144,13 @@ return __p
 
 this["JST"]["app/sidebar/user-infos"] = function(obj) {
 var __t, __p = '', __e = _.escape;
-__p += '<div class="sidebar-user-info-inner">\n\n  <a href="extra-profile.html" class="user-profile">\n    <img src="assets/images/user-4.png" width="60" height="60" class="img-circle img-corona" alt="user-pic" />\n\n    <span>\n      <strong>' +
-__e( obj.app.account().username ) +
+__p += '<style type="text/css">\n  .sidebar-user-info .user-links li a {\n    font-size: medium;\n  }\n</style>\n\n<div class="sidebar-user-info-inner">\n\n  <a href="extra-profile.html" class="user-profile">\n    <img src="' +
+((__t = ( obj.app.account.image() )) == null ? '' : __t) +
+'" width="60" height="60" class="img-circle img-corona" alt="user-pic" />\n\n    <span>\n      <strong>' +
+__e( obj.app.account.get('username') ) +
 '</strong>\n      ' +
-__e( obj.app.account().quote || 'A magnificient player' ) +
-'\n    </span>\n  </a>\n\n  <ul class="user-links list-unstyled">\n    <li>\n      <a href="extra-profile.html" title="Edit profile" data-module="Profile" data-action="index">\n        <i class="linecons-user"></i>\n        Edit profile\n      </a>\n    </li>\n    <li>\n      <a href="mailbox-main.html" title="Mailbox">\n        <i class="linecons-mail"></i>\n        Mailbox\n      </a>\n    </li>\n    <li class="logout-link">\n      <a href="extra-login.html" title="Log out">\n        <i class="fa-power-off"></i>\n      </a>\n    </li>\n  </ul>\n</div>\n';
+__e( obj.app.account.get('quote') ) +
+'\n    </span>\n  </a>\n\n  <ul class="user-links list-unstyled">\n    <li>\n      <a href="extra-profile.html" title="Edit profile" data-module="Profile" data-action="index">\n        <i class="fa-user"></i>\n        Edit profile\n      </a>\n    </li>\n    <li>\n      <a href="mailbox-main.html" title="Home" data-module="Home" data-action="index">\n        <i class="fa-home"></i>\n        Home\n      </a>\n    </li>\n    <li class="logout-link">\n      <a href="extra-login.html" title="Log out">\n        <i class="fa-power-off"></i>\n      </a>\n    </li>\n  </ul>\n</div>\n';
 return __p
 };
 

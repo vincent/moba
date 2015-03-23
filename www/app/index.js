@@ -12,3 +12,13 @@ Moba.addRegions({
 Moba.on('initialize:after', function() {
     Backbone.history.start({pushState: true});
 });
+
+$(document).on('click', 'a[data-module]', function (event) {
+
+    var link = $(event.target).closest('a');
+
+    if (link.data('module')) {
+        event.preventDefault();
+        Moba.vent.trigger('navigate', link.data());
+    }
+});

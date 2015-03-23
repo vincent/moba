@@ -2,15 +2,6 @@
 
 Moba.module('HeroViewer', function(HeroViewer, App, Backbone, Marionette, $, _) {
 
-  // Module Header View
-  // ------------------
-
-  HeroViewer.header = App.Base.Header.extend({
-    onRender: function () {
-      this.$el.html('<span class="title">Hero Viewer</span>');
-    }
-  });
-
   // Module Sidebar View
   // ------------------
 

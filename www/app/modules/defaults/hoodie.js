@@ -10,31 +10,64 @@ Moba.module('HoodieBridge', function(HoodieBridge, App, Backbone, Marionette, $,
     return $.Deferred();
   };
 
+  // Our User model
+  // ------------------
+
+  App.UserModel = Backbone.Model.extend({
+
+    quote: function () {
+      return this.get('quote') || 'A magnificient player';
+    },
+
+    image: function () {
+      return 'http://api.randomuser.me/portraits/thumb/men/' + 55 + '.jpg';
+    },
+
+    infos: function () {
+
+      // App.updateCard({
+      //   username: hoodie.account.username,
+      //   rank: 'n00b'
+      // });
+
+      return hoodie.game.getPlayerCard(this.get('username'));
+    },
+
+    updateInfos: function (values) {
+      return hoodie.game.updateCard(values);
+    }
+
+  });
+
+
   // Extend App with hoodie helpers
+  // ------------------
+
   _.extend(App, {
 
-    account: function () {
-      return hoodie.account;
+    account: null,
+
+    attachHoodieAccount: function () {
+      App.account = new App.UserModel({
+        id: hoodie.id(),
+        username: hoodie.account.username
+      });
     },
 
     isLoggedIn: function () {
+
       return hoodie.account.username !== undefined;
     },
 
-    playerCard: function (ownerHash) {
+    requestMatch: function () {
 
-          App.updateCard({
-            username: hoodie.account.username,
-            rank: 'n00b'
-          });
+      var promise = hoodie.game.requestMatch({});
 
+      promise.then(function (data) {
+        App.vent.trigger('match:ready', data);
+      });
 
-      ownerHash = ownerHash || hoodie.id();
-      return hoodie.game.getPlayerCard(ownerHash);
-    },
-
-    updateCard: function (values) {
-      return hoodie.game.updateCard(values);
+      return promise;
     }
 
     /* * /
@@ -75,8 +108,6 @@ Moba.module('HoodieBridge', function(HoodieBridge, App, Backbone, Marionette, $,
     promise.fail(function(){ alert('Get leaderboard Failed'); });
 
 
-
-
     Add points (current logged in user)
 
     var points = 3;
@@ -112,6 +143,9 @@ Moba.module('HoodieBridge', function(HoodieBridge, App, Backbone, Marionette, $,
 
   });
 
+  // Set the current user
+  App.attachHoodieAccount();
+
   // Patch the Marionette's Rendered to include the `user` variable
   _.extend(Marionette.Renderer, {
     render: renderTemplate
@@ -127,18 +161,21 @@ Moba.module('HoodieBridge', function(HoodieBridge, App, Backbone, Marionette, $,
   ///////////////////////
 
   function onSignout () {
+    App.attachHoodieAccount();
     hoodie.account.signOut();
   }
 
   function onSignin (username, password) {
     hoodie.account.signIn(username, password)
       .done(function(){
-          App.vent.trigger('login', hoodie.account);
+        App.attachHoodieAccount();
+        App.vent.trigger('login', App.account);
       })
       .fail(function(){
         hoodie.account.signUp(username, password, password)
           .done(function(){
-            App.vent.trigger('login', hoodie.account);
+            App.attachHoodieAccount();
+            App.vent.trigger('login', App.account);
           })
           .fail(function(){
             App.vent.trigger('login-fail');

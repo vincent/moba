@@ -1,25 +1,31 @@
+<style type="text/css">
+  .sidebar-user-info .user-links li a {
+    font-size: medium;
+  }
+</style>
+
 <div class="sidebar-user-info-inner">
 
   <a href="extra-profile.html" class="user-profile">
-    <img src="assets/images/user-4.png" width="60" height="60" class="img-circle img-corona" alt="user-pic" />
+    <img src="<%= obj.app.account.image() %>" width="60" height="60" class="img-circle img-corona" alt="user-pic" />
 
     <span>
-      <strong><%- obj.app.account().username %></strong>
-      <%- obj.app.account().quote || 'A magnificient player' %>
+      <strong><%- obj.app.account.get('username') %></strong>
+      <%- obj.app.account.get('quote') %>
     </span>
   </a>
 
   <ul class="user-links list-unstyled">
     <li>
       <a href="extra-profile.html" title="Edit profile" data-module="Profile" data-action="index">
-        <i class="linecons-user"></i>
+        <i class="fa-user"></i>
         Edit profile
       </a>
     </li>
     <li>
-      <a href="mailbox-main.html" title="Mailbox">
-        <i class="linecons-mail"></i>
-        Mailbox
+      <a href="mailbox-main.html" title="Home" data-module="Home" data-action="index">
+        <i class="fa-home"></i>
+        Home
       </a>
     </li>
     <li class="logout-link">

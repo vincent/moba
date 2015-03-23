@@ -1,0 +1,32 @@
+<style type="text/css">
+  .list-unstyled.user-friends-count li {
+    text-align: center;
+  }
+</style>
+
+<a href="" class="user-name">
+  <% obj.playerId; %>
+  <span class="user-status is-online">
+  </span>
+</a>
+
+<ul class="list-unstyled user-friends-count">
+  <li>
+    level
+    <span><%- (obj.level || 1) %></span>
+  </li>
+  <li>
+    points
+    <span><%- (obj.level || '0') %></span>
+  </li>
+</ul>
+
+<hr />
+
+<ul class="list-unstyled user-achievements">
+  <% _.each(obj.achievements, function(a){ %>
+  <li>
+    <span>643</span> followers
+  </li>
+  <% }); %>
+</ul>

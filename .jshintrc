@@ -2,7 +2,7 @@
   "node": true,
   "esnext": true,
   "bitwise": true,
-  "camelcase": true,
+  "camelcase": false,
   "eqeqeq": true,
   "eqnull": true,
   "immed": true,
@@ -17,7 +17,7 @@
   "unused": false,
   "trailing": true,
   "sub": true,
-  "maxlen": 150,
+  "maxlen": 250,
   "globals": {
     "$": true,
     "_": true,

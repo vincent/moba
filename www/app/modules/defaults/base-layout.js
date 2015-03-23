@@ -4,22 +4,17 @@ Moba.module('Base', function(Base, App, Backbone, Marionette, $, _) {
 
     App.Base = {};
 
-    // Root Class View
-    // ------------------
-
-    App.Base.Header = Backbone.Marionette.ItemView.extend({
-        setOptions: function () {
-        }
-    });
-
-
-
     // Module Header View
     // ------------------
 
-    App.Base.Header = Backbone.Marionette.ItemView.extend({
-        tagName:  'li',
-        template: JST['app/empty']
+    App.Base.Header = Backbone.Marionette.CompositeView.extend({
+
+        tagName:   'ul',
+
+        className: 'navbar-inner',
+
+        template:  JST['app/header/navbar'],
+
     });
 
     // Module Footer View
@@ -45,7 +40,6 @@ Moba.module('Base', function(Base, App, Backbone, Marionette, $, _) {
 
         events: {
             'click  .logout-link a':  'logout',
-            'click  a[data-module]':  'navigate'
         },
 
         template: JST['app/sidebar/index'],
@@ -60,7 +54,7 @@ Moba.module('Base', function(Base, App, Backbone, Marionette, $, _) {
 
             links: function () {
                 return Marionette.Renderer.render(JST['app/sidebar/links'], {
-                    items: self.links() || []
+                    items: self.links()
                 });
             },
 
@@ -68,10 +62,11 @@ Moba.module('Base', function(Base, App, Backbone, Marionette, $, _) {
         },
 
         links: function () {
-            return this.items();
+            return this.items || [];
         },
 
         onRender: function(template, data){
+            this.$el.slideDown('fast');
             try { setup_sidebar_menu(); } catch (e) {}
         },
 
@@ -80,15 +75,6 @@ Moba.module('Base', function(Base, App, Backbone, Marionette, $, _) {
         logout: function (event) {
             event.preventDefault();
             App.vent.trigger('signout');
-        },
-
-        navigate: function (event) {
-            var link = $(event.target).closest('a');
-
-            if (link.data('module')) {
-                event.preventDefault();
-                App.vent.trigger('navigate', link.data());
-            }
         }
 
     });
